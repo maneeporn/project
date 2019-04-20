@@ -13,10 +13,10 @@
 				<h1><?php echo $results['product_name'];?></h1>
 			</div>
 			<div class="col-8">
-		    <img class="img-responsive" src="image/<?php echo $results['picture1'];?>" >
-		    <img class="img-responsive" src="image/<?php echo $results['picture2'];?>" >
-		    <img class="img-responsive" src="image/<?php echo $results['picture3'];?>" >
-		    <img class="img-responsive" src="image/<?php echo $results['picture4'];?>" >
+		    <img class="img-fluid" src="image/<?php echo $results['picture1'];?>" >
+		    <img class="img-fluid" src="image/<?php echo $results['picture2'];?>" >
+		    <img class="img-fluid" src="image/<?php echo $results['picture3'];?>" >
+		    <img class="img-fluid" src="image/<?php echo $results['picture4'];?>" >
 			</div>
 			<div class="col-4">
 				<div class="addtocart">
