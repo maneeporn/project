@@ -12,21 +12,21 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="js/return_to_top.js"></script>
   </head>
-  <body class="page">
+  <body>
     <?php require "config.php"; ?>
-    <div class="nav-bar">
-      <img class="img-fluid logo"src="image/logo.png"></img>
-      <ul class="nav justify-content-center">
-        <li class="nav-item" >
-        <a class="nav-link active" href="homepage.php">Home</a></li>
-        <li class="nav-item">
-        <a class="nav-link" href="aboutme.php">About me</a></li>
-        <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#login_modal">Login</a></li>
-        <li class="nav-item">
-        <a class="nav-link" href="register.php">Sign up</a></li>
-      </ul>
-    </div>
-    
-    <!-- Return to Top -->
-    <button id="return_to_top"><i class="fas fa-chevron-up"></i></button>
+    <div class="content">
+      <div class="nav-bar">
+        <img class="img-fluid logo"src="image/logo.png"></img>
+        <ul class="nav justify-content-center">
+          <li class="nav-item" >
+          <a class="nav-link active" href="homepage.php">Home</a></li>
+          <li class="nav-item">
+          <a class="nav-link" href="aboutme.php">About me</a></li>
+          <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#login_modal">Login</a></li>
+          <li class="nav-item">
+          <a class="nav-link" href="register.php">Sign up</a></li>
+        </ul>
+      </div>
+      <!-- Return to Top -->
+      <button id="return_to_top"><i class="fas fa-chevron-up"></i></button>
