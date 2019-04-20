@@ -18,6 +18,19 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+body {
+  margin: 0;
+	background-image:url('image/wallpaper.jpg');
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height:100%;
+	width:100%;
+}
+
+button:focus {
+	outline:0;
+}
 
 p	{
 	font-family: Arial, Helvetica, sans-serif;
@@ -46,12 +59,6 @@ h2 {
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
 	margin:auto;
-}
-
-footer{ 
-  position:absolute; 
-  bottom:0; 
-  width:100%; 
 }
 
 .fullscreen {
@@ -89,22 +96,6 @@ footer{
 	width:100%;
 }
 
-img.img-fluid {
-	/* margin: auto;
-	padding-top: 50px;
-	display: block; */
-}
-
-.page {
-  margin: 0;
-	background-image:url('image/wallpaper.jpg');
-	background-size:cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	height:100%;
-	width:100%;
-}
-
 .logo {
     width: 70px;
     padding: 50px 0 0;
@@ -118,6 +109,10 @@ img.img-fluid {
     background: rgba(255,255,255,0.5);
     padding: 20px;
 	 	width: 300px;
+}
+
+.product_card {
+	margin-bottom: 5%;
 }
 
 .addtocart p {
@@ -143,6 +138,7 @@ img.img-fluid {
 }
 
 .footer{
+  width:100%;
 	text-align: center;
 	font-size: 2em;
 	color: white;
@@ -165,19 +161,18 @@ img.img-fluid {
 	padding: 5% 0;
 }
 
-#return-to-top {
+#return_to_top {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
-	background: rgb(0, 0, 0);
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.5);
 	width: 50px;
 	height: 50px;
 	display: block;
-	text-decoration: none;
-	-webkit-border-radius: 35px;
-	-moz-border-radius: 35px;
-	border-radius: 35px;
+	border: none;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
 	display: none;
 	-webkit-transition: all 0.3s linear;
 	-moz-transition: all 0.3s ease;
@@ -185,12 +180,11 @@ img.img-fluid {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-#return-to-top i {
+#return_to_top i {
 	color: #fff;
 	margin: 0;
+	top: -2px;
 	position: relative;
-	left: 16px;
-	top: 13px;
 	font-size: 19px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -198,10 +192,10 @@ img.img-fluid {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-#return-to-top:hover {
-	background: rgba(0, 0, 0, 0.9);
+#return_to_top:hover {
+	background: rgba(0, 0, 0, 0.7);
 }
-#return-to-top:hover i {
+#return_to_top:hover i {
 	color: #fff;
-	top: 5px;
+	top: -5px;
 }
