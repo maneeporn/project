@@ -19,7 +19,7 @@
         <img class="img-fluid logo"src="image/logo.png"></img>
         <ul class="nav justify-content-center">
           <li class="nav-item" >
-          <a class="nav-link active" href="homepage.php">Home</a></li>
+          <a class="nav-link active" href="index.php">Home</a></li>
           <li class="nav-item">
           <a class="nav-link" href="aboutme.php">About me</a></li>
           <li class="nav-item">

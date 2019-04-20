@@ -42,5 +42,5 @@
   	</div>
 	</div>
 
-<a class="nav-link" href="homepage.php">Back to shop</a></li>
+<a class="nav-link" href="index.php">Back to shop</a></li>
 <?php include "footer.php" ?>
