@@ -1,0 +1,136 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+p	{
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin:auto;
+}
+
+a	{
+	color: #F5F5DC;
+	text-decoration:none;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin:auto;
+	font-size: 1em;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin:auto;
+	font-size: 2.5em;
+	padding-top: 70px;
+	text-align: center;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin:auto;
+}
+
+.fullscreen {
+	margin: 0;
+	background-image:url('image/index.gif');
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height:100%;
+	width:100%;
+}
+
+.logobig img {
+	width: 200%;
+	height: 200%;
+	display: block;
+	margin: auto;
+}
+
+.home {
+	margin: 0;
+	background-image:url('image/home.jpg');
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height:100%;
+	width:100%;
+}
+
+img.img-responsive {
+	margin: auto;
+	padding-top: 50px;
+	display: block;
+}
+
+.page {
+  margin: 0;
+	background-image:url('image/wallpaper.jpg');
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height:100%;
+	width:100%;
+}
+
+.logo {
+    width: 70px;
+    padding: 0;
+    margin: 0 auto;
+}
+.addtocart {
+    position: fixed;
+    top: 40%;
+    background: rgba(255,255,255,0.5);
+    padding: 20px;
+	 	width: 300px;
+}
+.addtocart p {
+    padding-bottom: 13px;
+}
+.btn-light{
+  margin: auto;
+  display: block;
+}
+.btn-outline-dark{
+	margin: 5 auto;
+	display: block;
+	background: rgba(230, 172, 150, 0.79);
+	color: white;
+	border: 1px solid white;
+}
+.btn-outline-dark:hover {
+    background-color: #c174a582;
+		border: 1px solid white;
+}
+.footer{
+	text-align: center;
+	font-size: 2em;
+	color: white;
+	background: rgba(255,255,255,0.3);
+}
+.footer-copyright{
+	font-size: 15px;
+}
+.description{
+  font-size: 12px;
+}
