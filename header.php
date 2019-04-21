@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="js/return_to_top.js"></script>
+    <script src="js/cart.js"></script>
   </head>
   <body>
     <?php require "config.php"; 
@@ -24,7 +25,8 @@
         <img class="img-fluid logo"src="image/logo.png">
         <ul class="nav justify-content-center">
           <li class="nav-item" >
-          <a class="nav-link active" href="index.php">Home</a></li>
+            <a class="nav-link active" href="index.php">Home</a>
+          </li>
           <li class="nav-item">
           <a class="nav-link" href="aboutme.php">About me</a></li>
             <?php 
@@ -42,7 +44,14 @@
               }?>
           
           <li class="nav-item">
-          <a class="nav-link" href="register.php">Sign up</a></li>
+            <a class="nav-link" href="register.php">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a id="nav_cart" class="nav-link" data-toggle="modal" data-target="#cart">
+              <i class="fas fa-shopping-cart"></i>
+              (<span class="product_count">0</span>)
+            </a>
+          </li>
         </ul>
       </div>
       <!-- Return to Top -->

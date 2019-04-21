@@ -20,6 +20,10 @@
 			<div class="col-4">
 				<div class="addtocart">
 				   <form action="add_to_cart_summit.php" method="post">
+						<input type="hidden" id="product_id" name="product_id" value="<?php echo $results['product_id'];?>">
+						<input type="hidden" id="product_name" name="product_name" value="<?php echo $results['product_name'];?>">
+						<input type="hidden" id="product_price" name="product_price" value="<?php echo $results['product_price'];?>">
+						<input type="hidden" id="picture1" name="picture1" value="<?php echo $results['picture1'];?>">
 						 <h2><?php echo $results['product_name'];?></h2>
 						 <p>Details</p>
 						 <p><?php echo $results['product_price'];?>THB</p>
@@ -28,13 +32,13 @@
 						 <br>
 						 <div class="form-group">
 							 <label for="size">Size </label>
-						 		<select id="size" class="form-control" name="size">
+						 		<select id="size" name="size" class="form-control">
 					  			<option value="s">S</option>
 					  			<option value="m">M</option>
 					  			<option value="l">L</option>
 								</select>
 						 </div>
-						 <button type="submit" class="btn btn-light">Add to cart</button>
+						 <button id="add_cart" type="button" class="btn btn-light add-to-cart">Add to cart</button>
 					</form>
 			  </div>
 			</div>
