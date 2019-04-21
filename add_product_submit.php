@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	require_once "config.php";
 	$product_name = $_POST['product_name'];
 	$product_price = $_POST['product_price'];

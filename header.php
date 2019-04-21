@@ -13,17 +13,34 @@
     <script src="js/return_to_top.js"></script>
   </head>
   <body>
-    <?php require "config.php"; ?>
+    <?php require "config.php"; 
+      if (session_status() == PHP_SESSION_NONE) 
+      {
+        session_start();
+      }
+    ?>
     <div class="content">
       <div class="nav-bar">
-        <img class="img-fluid logo"src="image/logo.png"></img>
+        <img class="img-fluid logo"src="image/logo.png">
         <ul class="nav justify-content-center">
           <li class="nav-item" >
           <a class="nav-link active" href="index.php">Home</a></li>
           <li class="nav-item">
           <a class="nav-link" href="aboutme.php">About me</a></li>
-          <li class="nav-item">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#login_modal">Login</a></li>
+            <?php 
+              if (!isset($_SESSION['user_id']) )
+              {
+                echo "<li class='nav-item'><a class=\"nav-link\" href=\"login_modal.php\">Log in</a></li>";      
+              }
+              else 
+              {
+                if($_SESSION['user_id']=='1')
+                {
+                  echo "<li class=\"nav-item\"><a class=\"nav-link\" href=\"admin.php\">Admin</a></li>";
+                }
+                echo "<li class='nav-item'><a class=\"nav-link\" href=\"logout.php\">Log out</a></li>";
+              }?>
+          
           <li class="nav-item">
           <a class="nav-link" href="register.php">Sign up</a></li>
         </ul>

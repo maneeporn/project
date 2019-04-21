@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	require_once "config.php";
 	$username = $_POST['username'];
   $password = $_POST['password'];
@@ -40,7 +39,7 @@ else
   else
   { 
 	  echo "welcome<br><br>";
-	  echo "<a href=\"homepage.php\">Go back to website</a>";
+	  echo "<a href=\"index.php\">Go back to website</a>";
   } 
 }
 
