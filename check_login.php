@@ -12,15 +12,13 @@
 
 	require_once "config.php";
 	$a1 = $_POST['username'];
-	$a2 = $_POST['pw'];;
+	$a2 = $_POST['password'];;
 	$sql="SELECT * FROM user WHERE user_name = '$a1' AND password = '$a2' ";
 	$query = mysqli_query($connect,$sql);
 
 	if(mysqli_num_rows($query) > 0)
 	{
 		$row = mysqli_fetch_assoc($query);
-		$u=$row['user_name'];
-		$p=$row['password'];
 		$l=$row['position_id'];
 
 		if($l=='1')
@@ -36,8 +34,8 @@
 	}
 	else
 	{
-		$_SESSION['warning'] = 'Username or password are not correct. Please try again !!!!!!!';
-		header("Location: login.php");
+		die ("Could not successfully run the query $query".mysqli_error($connect));
+		//header("Location: login.php");
 	}
 	mysqli_close($connect);
 ?>

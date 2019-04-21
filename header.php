@@ -32,7 +32,7 @@
             <?php 
               if (!isset($_SESSION['user_id']) )
               {
-                echo "<li class='nav-item'><a class=\"nav-link\" href=\"login_modal.php\">Sign up</a></li>";      
+                echo "<li class='nav-item'><a class=\"nav-link\" href=\"login.php\">Sign up</a></li>";      
               }
               else 
               {
