@@ -29,26 +29,22 @@ if ($password!=$cfpassword)
 }
 else
 {
-  $query = "INSERT INTO user (password) VALUES ('$password')";
-  $result = mysqli_query($connect,$query);
-  if (!$result)
+  $userquery = "INSERT INTO user (user_name,firstname,lastname,email,password,phone,address,position_id)
+              VALUES ('$username','$fname','$lname','$email','$password','$phone','$address',2)";
+  $results = mysqli_query($connect,$userquery);
+
+  if (!$results)
   {
-  	die ("Could not successfully run the query $query".mysqli_error($connect));
+  	die ("Could not successfully run the query $userquery".mysqli_error($connect));
   }
+  else
+  { 
+	  echo "welcome<br><br>";
+	  echo "<a href=\"homepage.php\">Go back to website</a>";
+  } 
 }
 
-$userquery = "INSERT INTO user (user_name,firtname,lastname,email,phone,address,position_id)
-              VALUES (\"$username\",\"$fname\",\"$lname\",\"$email\",\"$phone\",\"$address\",'2')";
-$results = mysqli_query($connect,$userquery);
 
-// if (!$results)
-// {
-// 	die ("Could not successfully run the query $userquery".mysqli_error($connect));
-// }
-// else
-// {
-// 	echo "Successfully added the new product<br><br>";
-// 	echo "<a href=\"homepage.php\">Go back to website</a>";
-// }
+
 
 ?>

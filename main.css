@@ -61,15 +61,6 @@ h2 {
 	margin:auto;
 }
 
-<<<<<<< HEAD
-footer{
-  position:absolute;
-  bottom:0;
-  width:100%;
-}
-
-=======
->>>>>>> be17a8ce7164a79e3051af3db3da956e94e88b1a
 .fullscreen {
 	margin: 0;
 	background-image:url('image/index.gif');
@@ -175,7 +166,6 @@ footer{
 	padding: 0 0 5%;
 }
 
-<<<<<<< HEAD
 .card-body{
 		text-align: center;
     display: block;
@@ -215,10 +205,10 @@ footer{
 	text-align: center;
 	margin: auto;
 }
-#return-to-top {
-=======
+.card.mb-3{
+	margin: auto
+}
 #return_to_top {
->>>>>>> be17a8ce7164a79e3051af3db3da956e94e88b1a
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
@@ -254,10 +244,5 @@ footer{
 }
 #return_to_top:hover i {
 	color: #fff;
-<<<<<<< HEAD
-	top: 5px;
-}
-=======
 	top: -5px;
 }
->>>>>>> be17a8ce7164a79e3051af3db3da956e94e88b1a
