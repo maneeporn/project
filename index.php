@@ -1,5 +1,4 @@
-<?php include "header.php";
-	session_start();?>
+<?php include "header.php";?>
   <div class="container">
 		<div class="row">
       <?php $userquery = "Select * from product";

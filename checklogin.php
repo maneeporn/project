@@ -1,6 +1,9 @@
 <?php
-	session_start();
 	session_unset();
+	if (session_status() == PHP_SESSION_NONE) 
+	{
+	  session_start();
+	}
 	if(isset($_SESSION['warning']))
 	{
 		echo "<p align='center'><font color='FF0000'><B>".$_SESSION['warning']."</B></font></p>";
@@ -19,9 +22,17 @@
 		$u=$row['user_name'];
 		$p=$row['password'];
 		$l=$row['position_id'];
-		$_SESSION['user_id']=$l;
-		$_SESSION['position']=$l;
-		header("Location:index.php");
+
+		if($l=='1')
+		{
+			$_SESSION['user_id'] = $l;
+			header("Location:admin.php");
+		}
+		else
+		{
+			$_SESSION['user_id']=$l;
+			header("Location:index.php");
+		}	
 	}
 	else
 	{

@@ -1,7 +1,9 @@
 <?php
 	require_once "config.php";
-	$fac_ID = $_GET['id'];
-	$userquery = "Select * from faculty where facultyID = $fac_ID ";
+	require "header.php";
+	$product_id = $_GET['id'];
+
+	$userquery = "Select * from product where product_id = $product_id ";
 	$result = mysqli_query($connect,$userquery);
 	if (!$result)
 	{
@@ -9,14 +11,51 @@
 	}
 	else
 	{
-		echo "Update data<br><br>";
 		if(mysqli_num_rows($result) > 0)
 		{
 			$row = mysqli_fetch_assoc($result);
 ?>
-<html>
-	<head>
-	<body>
+<form name="form1" method="post" action="update_data_submit.php?id=<?php echo $product_id;?>">
+	<div class="container">
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="<?php echo $row['facultyname'];?>" name="product_name">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Product price" name="product_price">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Product color" name="product_color">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Product description" name="product_description">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Quantity size s" name="size_s">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Quantity size m" name="size_m">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Quantity size l" name="size_l">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Picture" name="picture1">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Picture" name="picture2">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Picture" name="picture3">
+		</div>
+		<div class="input-group">
+			<input class="input--style-3" type="text" placeholder="Picture" name="picture4">
+		</div>
+		<div class="input-group">
+			<input class="button1" type="submit" name="button" id="button" value="Submit" />
+			<input class="button2" type="reset" name="button2" id="button2" value="Reset" />
+		</div>
+	</div>
+</form>
 		<form name="form1" method="post" action="update_data_submit.php?id=<?php echo $fac_ID;?>">
 		<table width="416" border="0">
 		<tr>
