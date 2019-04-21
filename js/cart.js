@@ -193,4 +193,12 @@ var shoppingCart = (function() {
   
   displayCart();
   
+  $('#add_cart').click(function() {
+    var picture1 = $('#picture1').val();
+    $("#pimg").attr("src","image/" + picture1);
+    $('#pname').text($('#product_name').val());
+    $('#psize').text($('#size').val());
+    $('#cart_alert').modal('show');
+    setTimeout(function(){ $('#cart_alert').modal('hide'); }, 2000);
+  })
 });

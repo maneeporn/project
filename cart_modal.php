@@ -26,3 +26,16 @@
     </div>
   </div>
 </div> 
+
+<div class="modal fade" id="cart_alert" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="container-fluid">
+                <img id="pimg" class='img-fluid'>
+                <p><i class="fas fa-plus-circle"></i> เพิ่ม <span id="pname"></span> (<span id="psize"></span>) ในรถเข็น<i class="fas fa-shopping-cart"></i></p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div> 
