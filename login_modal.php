@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body">
-				<form action="checklogin.php" method="post">
+				<form action="check_login.php" method="post">
 					<table>
 						<tr>
 							<td>Username</td>
