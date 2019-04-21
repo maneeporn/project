@@ -21,7 +21,7 @@
 		$l=$row['position_id'];
 		$_SESSION['user_id']=$l;
 		$_SESSION['position']=$l;
-		header("Location:homepage.php");
+		header("Location:index.php");
 	}
 	else
 	{

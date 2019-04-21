@@ -21,7 +21,7 @@
 		//{
 			echo "Add to cart successfully";
 			echo "<a href=\"cart.php\">view cart</a>";
-			echo "<a href=\"homepage.php\">continue shopping </a>";
+			echo "<a href=\"index.php\">continue shopping </a>";
 		//}
 	}
 ?>
