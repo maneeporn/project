@@ -191,7 +191,6 @@ footer{
 	margin-bottom: 3px;
 	width: 250px;
 	height: 30px;
-	color: white;
 	background: #d8dadf;
 	font-size: 15px;
 	border: 0px;
@@ -206,6 +205,15 @@ footer{
 .card-title{
 	color: white;
 	font-size: 20px;
+}
+.button{
+	background: rgb(158, 69, 48);
+	color: wheat;
+	width: 75px;
+	height: 30px;
+	border: 0px;
+	text-align: center;
+	margin: auto;
 }
 #return-to-top {
 =======

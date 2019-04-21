@@ -17,7 +17,7 @@ while ($row = mysqli_fetch_assoc($data))
         {
           if ($row==$username)
           {
-            echo "enter new username";
+            echo "<a href=\"register.php\">enter new username</a>";
             break;
           }
         }
@@ -25,6 +25,7 @@ while ($row = mysqli_fetch_assoc($data))
 if ($password!=$cfpassword)
 {
   echo "pls enter password is okay tee";
+  echo "<a href=\"register.php\">enter new username</a>";
 }
 else
 {
@@ -37,17 +38,17 @@ else
 }
 
 $userquery = "INSERT INTO user (user_name,firtname,lastname,email,phone,address,position_id)
-              VALUES (\"$username\",\"$fname\",\"$lname\",\"$email\",\"$phone\",\"$address\",\"2\")";
+              VALUES (\"$username\",\"$fname\",\"$lname\",\"$email\",\"$phone\",\"$address\",'2')";
 $results = mysqli_query($connect,$userquery);
 
-if (!$results)
-{
-	die ("Could not successfully run the query $userquery".mysqli_error($connect));
-}
-else
-{
-	echo "Successfully added the new product<br><br>";
-	echo "<a href=\"homepage.php\">Go back to website</a>";
-}
+// if (!$results)
+// {
+// 	die ("Could not successfully run the query $userquery".mysqli_error($connect));
+// }
+// else
+// {
+// 	echo "Successfully added the new product<br><br>";
+// 	echo "<a href=\"homepage.php\">Go back to website</a>";
+// }
 
 ?>
