@@ -335,3 +335,9 @@ top: -5px;
 	font-weight: bold; 
 	margin: auto;
 }
+#cart_alert img{
+	margin-bottom: 2%;
+}
+#cart_alert p {
+	font-size: 12px;
+}
