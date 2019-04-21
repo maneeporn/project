@@ -182,6 +182,19 @@ font-size: 12px;
 	margin: auto;
 	background: rgba(126, 78, 58, 0.51);
 }
+.form-group.update{
+	margin: auto;
+	padding-bottom: 15px;
+	color: rgb(119, 14, 40);
+}
+.form-control{
+	height: 40px;
+	background: #de92a9ad;
+	color: white;
+}
+.update{
+	width: 500px;
+}
 
 .no-gutters{
 margin: auto;
