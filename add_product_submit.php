@@ -15,7 +15,7 @@
 	if($_SESSION['position'] == 1)
 	{
 		$userquery = "INSERT INTO product
-									VALUES ('','$product_name','$product_price','$product_color','$product_description','$size_s','$size_m','$size_l','$pic1','$pic2','$pic3','$pic4')";
+					VALUES ('','$product_name','$product_price','$product_color','$product_description','$size_s','$size_m','$size_l','$pic1','$pic2','$pic3','$pic4')";
 		$result = mysqli_query($connect,$userquery);
 		if (!$result)
 		{
