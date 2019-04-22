@@ -219,6 +219,9 @@ margin-top: 5px;
 color: white;
 font-size: 20px;
 }
+.card{
+	height: 255px;
+}
 .button1{
 background: rgb(158, 69, 48);
 color: wheat;

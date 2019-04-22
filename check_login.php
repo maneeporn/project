@@ -12,7 +12,7 @@
 
 	require_once "config.php";
 	$a1 = $_POST['username'];
-	$a2 = $_POST['password'];;
+	$a2 = $_POST['password'];
 	$sql="SELECT * FROM user WHERE user_name = '$a1' AND password = '$a2' ";
 	$query = mysqli_query($connect,$sql);
 
@@ -34,8 +34,8 @@
 	}
 	else
 	{
-		die ("Could not successfully run the query $query".mysqli_error($connect));
-		//header("Location: login.php");
+		// die ("Could not successfully run the query $query".mysqli_error($connect));
+		header("Location: login.php");
 	}
 	mysqli_close($connect);
 ?>

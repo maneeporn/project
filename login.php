@@ -7,7 +7,7 @@
 				<h3>Sign In</h3>
 			</div>
 			<div class="card-body">\
-				<form action="check_login.php"> 
+				<form action="check_login.php" method="post"> 
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -21,7 +21,7 @@
 						</div>
 					</div>
 					<div class="input-group">
-						<input class="button1" type="submit" name="button" id="button" value="Submit" />
+						<input class="button1" type="submit" name="button" id="button" value="sign in" />
 			        </div>
 				</form>
 			</div>
