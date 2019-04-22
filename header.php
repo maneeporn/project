@@ -18,6 +18,7 @@
       if (session_status() == PHP_SESSION_NONE) 
       {
         session_start();
+		    $_SESSION['login_status'] = '0';
       }
     ?>
     <div class="content">

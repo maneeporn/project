@@ -282,6 +282,27 @@ color: saddlebrown;
 	padding: 0;
 	height: 40px;
 }
+.cvv{
+	width: 100px;
+}
+.cvvv{
+	width: 95px;
+}
+.form-control{
+	width: 225px;
+}
+#expityMonth.form-control{
+	width: 55px;
+}
+#expityYear.form-control{
+	width: 55px;
+	margin-left: 20px;
+}
+#cvCode.form-control{
+	width: 65px;
+}
+
+
 #nav_cart {
 	color: #F5F5DC;
 	position: relative;

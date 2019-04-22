@@ -15,7 +15,7 @@
 		{
 			$row = mysqli_fetch_assoc($result);
 ?>
-			<form name="form1" method="post" action="update_data_submit.php?id=<?php echo $product_id;?>">
+			<form name="form1" method="post" action="update_product_submit.php?id=<?php echo $product_id;?>">
 				<div class="form-group update">
 					<label for="product_name">Product Name:</label>
 					<input type="text" class="form-control" id="product_name" value="<?php echo $row['product_name'];?>">
