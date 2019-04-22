@@ -10,7 +10,7 @@
 						</tr>
 						<tr>
 							<td>Password</td>
-							<td><input type="text" name="pw"/></td>
+							<td><input type="password" name="pw"/></td>
 						</tr>
 						<tr>
 							<td colspan="2" align="center"><input type ="submit" name="button" id="button" value="submit"/>
