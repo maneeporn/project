@@ -20,9 +20,15 @@
             <div class="content">
                 <div class="row">
                     <div class="col-7">
+                        <div class="card address">
+                            <div class="card-title">
+                                <h3 class="addressh3">Address<h3>
+                            </div>
+                            <div class="card-body address">
+
                     <?php   if($_SESSION['login_status'] = '0')
                             {?>
-                                <form  method="post" action="order_submit.php">
+                                <form  method="post" action="payment.php">
                                 <div class="form-group address">
                                     <label>Firstname</label>
                                     <input type="text" class="form-control" name="fname">
@@ -43,7 +49,7 @@
                     <?php   }
                             else
                             {?>
-                                <form  method="post" action="order_submit.php">
+                                <form  method="post" action="payment.php">
                                 <div class="form-group address">
                                     <label>Firstname</label>
                                     <input type="text" class="form-control" name="fname" value="<?php echo $row['firstname'];?>">
@@ -62,7 +68,9 @@
                                 </div>
                                 </form>
                                 
-                    <?php   }?>    
+                    <?php   }?> 
+                            </div>
+                         </div>
                     </div>
                     <div class="col-5">
                         
@@ -70,10 +78,5 @@
                 </div>
             </div>
                             <?php }?>                           
-
-
-
-
-
 
     <?php include "footer.php"; ?> 

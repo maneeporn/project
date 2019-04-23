@@ -31,13 +31,16 @@
 						 <p class="description"><?php echo $results['product_description'];?></p>
 						 <br>
 						 <div class="form-group">
-							 <label for="size">Size </label>
-						 		<select id="size" name="size" class="form-control">
-					  			<option value="s">S</option>
-					  			<option value="m">M</option>
-					  			<option value="l">L</option>
-								</select>
-						 </div>
+								<label for="size">Size </label>
+									<select id="size" name="size" class="form-control size">
+									<?php 	$userquery = "Select * from size_product";
+										$size = mysqli_query($connect,$userquery);
+										while ($rowsize = mysqli_fetch_assoc($size))
+            				{?>
+											<option value="s"><?php echo $rowsize['size_name']?></option>
+							<?php } ?>
+									</select>
+								</div>
 						 <button id="add_cart" type="button" class="btn btn-light add-to-cart">Add to cart</button>
 					</form>
 			  </div>
@@ -45,5 +48,4 @@
   	</div>
 	</div>
 
-<a class="nav-link" href="index.php">Back to shop</a></li>
 <?php include "footer.php" ?>

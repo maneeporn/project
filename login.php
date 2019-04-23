@@ -11,13 +11,13 @@
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
-							<input type="text" class="form-control" placeholder="username" name="username">	
+							<input type="text" class="form-control login" placeholder="username" name="username">	
 						</div>
                     </div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
-							<input type="password" class="form-control" placeholder="password" name="password">
+							<input type="password" class="form-control login" placeholder="password" name="password">
 						</div>
 					</div>
 					<div class="input-group">

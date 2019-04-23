@@ -33,7 +33,7 @@
 	}
 	else
 	{
-        header("Location:show_data_product.php");
+		header("Location:show_data_product.php");
 	}
 
 ?>
