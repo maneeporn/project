@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-light">Check out</button>
+            <a href="order"<button type="button" class="btn btn-light">Check out</button>
             <button type="button" class="clear-cart btn btn-light">Clear Cart</button>
             <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
         </div>

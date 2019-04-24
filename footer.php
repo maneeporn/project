@@ -1,4 +1,4 @@
-    <?php include "login_modal.php" ?>
+
     <?php include "cart_modal.php" ?>
     </div>
     <footer class="footer mt-auto pt-4">

@@ -20,7 +20,8 @@
 	{
 		$row = mysqli_fetch_assoc($query);
 		$l=$row['position_id'];
-
+		$_SESSION['login_status'] = '1';
+		$_SESSION['user_id'] = $row['user_id'];
 		if($l=='1')
 		{
 			$_SESSION['user_id'] = $l;

@@ -8,10 +8,6 @@
     {
         die ("Could not successfully run the query $userquery".mysqli_error($connect));
     }
-    if (mysqli_num_rows($result) == 0)
-    {
-        echo "No records were found with query $userquery";
-    }
     else
     {
         echo "<table class=\"showdata\">";
