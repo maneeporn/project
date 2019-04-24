@@ -46,7 +46,8 @@ var shoppingCart = (function() {
   
     // Remove all items from cart
     obj.removeItemFromCartAll = function(product_id, size) {
-      saveCart('remove', product_id, '', size, '');
+      console.log(size);
+      saveCart('remove', product_id, size, '');
     }
   
     // Clear cart
@@ -80,6 +81,7 @@ var shoppingCart = (function() {
             output ="<div class='row'>\
                         <div class='col-12'><h2>No products in cart.</h2></div>\
                     </div>";
+                    $('#sum').val(0)
         } else {
            
             data = JSON.parse(res);
@@ -124,6 +126,7 @@ var shoppingCart = (function() {
   $('.show-cart').on("click", ".delete-item", function(event) {
     var id = $(this).data('id');
     var size = $(this).data('size');
+    console.log(size);
     shoppingCart.removeItemFromCartAll(id, size);
   })
   

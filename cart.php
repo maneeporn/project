@@ -13,7 +13,7 @@
             case 'add' : add($connect, $product_id, $product_size, $qty, $user_id);break;
             case 'remove' : remove($connect, $product_id, $product_size, $user_id);break;
             case 'setcount' : setcount();break;
-            case 'clear' : clear();break;
+            case 'clear' : clear($connect,$user_id);break;
         }
     }
     
@@ -93,8 +93,11 @@
     }
 
     function remove($connect, $product_id, $product_size, $user_id) {
-        
-        $query = "Delete from cart_details where product_size = '$product_size' and product_id = $product_id and user_id = $user_id";
+        $querycart = "Select cart_id from cart where user_id = $user_id and cart_status = 'not paid'";
+        $check_cart_status = mysqli_query($connect,$querycart);
+        $data = mysqli_fetch_assoc($check_cart_status);
+        $cart_id = $data['cart_id'];
+        $query = "Delete from cart_details where product_size = '$product_size' and product_id = $product_id and cart_id = $cart_id";
 		$result = mysqli_query($connect,$query);
 		if (!$result)
 		{
@@ -110,7 +113,21 @@
         echo 'setcount';
     }
 
-    function clear() {
-        echo 'clear';
+    function clear($connect,$user_id) {
+        $querycart = "Select cart_id from cart where user_id = $user_id and cart_status = 'not paid'";
+        $check_cart_status = mysqli_query($connect,$querycart);
+        $data = mysqli_fetch_assoc($check_cart_status);
+        $cart_id = $data['cart_id'];
+        $query = "Delete from cart_details where cart_id = $cart_id  ";
+		$result = mysqli_query($connect,$query);
+        if (!$result)
+		{
+			die ("Could not successfully run the query $query".mysqli_error($connect));
+        }
+        else
+        {
+            echo"success";
+        }
+        
     }
 ?>
