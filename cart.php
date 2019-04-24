@@ -18,7 +18,7 @@
     }
     
     function get_cart_data($connect, $user_id) {
-        $query = "Select * from cart JOIN product using(product_id) where user_id = $user_id";
+        $query = "Select product.picture1,product.product_name,cart_details.product_size,product.product_price,cart_details.qty,product_id from cart JOIN cart_details using(cart_id)	JOIN product USING (product_id) where user_id = $user_id";
         $result = mysqli_query($connect,$query);
 		if (!$result)
 		{
@@ -94,7 +94,7 @@
 
     function remove($connect, $product_id, $product_size, $user_id) {
         
-        $query = "Delete from cart where product_size = '$product_size' and product_id = $product_id and user_id = $user_id";
+        $query = "Delete from cart_details where product_size = '$product_size' and product_id = $product_id and user_id = $user_id";
 		$result = mysqli_query($connect,$query);
 		if (!$result)
 		{

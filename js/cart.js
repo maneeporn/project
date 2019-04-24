@@ -81,21 +81,25 @@ var shoppingCart = (function() {
                         <div class='col-12'><h2>No products in cart.</h2></div>\
                     </div>";
         } else {
+           
             data = JSON.parse(res);
-            $.each( data, function( i, val ) {
+            $.each( data, function( i, val ){
+              var total = val.qty * val.product_price;
+              var sum = Number($('#sum').val()) ;
+                $('#sum').val(sum += Number(total));
                 output +=
                     "<div class='row'>\
                         <div class='col-1'><img class='img-fluid' src='image/" + val.picture1 + "' ></div>\
                         <div class='col-4'><p>" + val.product_name + " (" + val.product_size + ")</p></div>\
-                        <div class='col-2'><p>" + val.total + " THB</p></div>\
+                        <div class='col-2'><p>" + val.product_price + " THB</p></div>\
                         <div class='col-1'><input type='number' class='item-count form-control' data-id='" + val.product_id + "'  data-size='" + val.product_size + "' value='" + val.qty + "'></div>\
-                        <div class='col-3'><p>Total = " + val.total + " THB</p></div>\
+                        <div class='col-3'><p>Total = " + total + " THB</p></div>\
                         <div class='col-1 ml-auto'><button class='delete-item btn' data-id='" + val.product_id + "' data-size='" + val.product_size + "' ><i class='fas fa-trash-alt'></i></button></div>\
                     </div>";
             });
         }
         $('.show-cart').html(output);
-        $('.total-cart').html(1);
+        $('.total-cart').html($('#sum').val());
         $('.product_count').html(1);
       }
     });

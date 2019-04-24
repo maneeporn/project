@@ -12,13 +12,14 @@
             <div class="container-fluid">
                 <div class="show-cart"></div>
                 <div class="float-right" style="margin-top: 2%;">
+                    <input type="hidden" id="sum">
                     <p>Total price: <span class="total-cart"></span> THB</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
         <div class="modal-footer">
-            <a href="order"<button type="button" class="btn btn-light">Check out</button>
+            <a href="order"></a><button type="button" class="btn btn-light">Check out</button>
             <button type="button" class="clear-cart btn btn-light">Clear Cart</button>
             <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
         </div>
