@@ -1,7 +1,8 @@
 <?php
 	require_once "config.php";
-	require "header.php";
+  require "header.php";
 ?>
+
 <div class="container">
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row">

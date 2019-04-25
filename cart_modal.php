@@ -7,7 +7,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form> 
         <div class="modal-body">
             <div class="container-fluid">
                 <div class="show-cart"></div>
@@ -19,11 +18,13 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a href="order"></a><button type="button" class="btn btn-light">Check out</button>
+          <form action ="order.php" method="post">
+            <input type="hidden" id="cart_id" name="cart_id">
+            <button type="submit" class="btn btn-light" id="checkout">Check out</button>
+          </form>
             <button type="button" class="clear-cart btn btn-light">Clear Cart</button>
             <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
         </div>
-      </form>
     </div>
   </div>
 </div> 

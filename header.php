@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="js/return_to_top.js"></script>
+    <script src="js/sticker.js"></script>
     <script src="js/cart.js"></script>
   </head>
   <body>
@@ -57,3 +58,10 @@
       </div>
       <!-- Return to Top -->
       <button id="return_to_top"><i class="fas fa-chevron-up"></i></button>
+      <?php 
+        if (isset($_SESSION['user_id'])) {
+          echo "<script>function getUserId() { return user_id = '".$_SESSION['user_id']."';}</script>";
+        } else { 
+          echo "<script>function getUserId() { return user_id = '!login';}</script>";
+        } 
+      ?>

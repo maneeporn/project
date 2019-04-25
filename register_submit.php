@@ -38,8 +38,7 @@ else
   }
   else
   { 
-	  echo "welcome<br><br>";
-	  echo "<a href=\"index.php\">Go back to website</a>";
+    header("Location:index.php");
   } 
 }
 

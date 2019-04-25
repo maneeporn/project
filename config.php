@@ -5,7 +5,7 @@
 	$dbname = "project";
 
 		$connect = mysqli_connect($server,$user,$password,$dbname);
-		
+
 		if(!$connect)
 		{
 			die ("ERROR: Cannot connect to the database $$dbname on server $server

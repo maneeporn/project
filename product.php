@@ -9,7 +9,7 @@
   <div class="container">
 		<div class="row">
 			<div class="col-12">
-				<h1><?php echo $results['product_name'];?></h1>
+				<h1 style="padding: 1% 0 2%;"><?php echo $results['product_name'];?></h1>
 			</div>
 			<div class="col-8">
 		    <img class="img-fluid" src="image/<?php echo $results['picture1'];?>" >
@@ -37,7 +37,7 @@
 										$size = mysqli_query($connect,$userquery);
 										while ($rowsize = mysqli_fetch_assoc($size))
             				{?>
-											<option value="s"><?php echo $rowsize['size_name']?></option>
+											<option value="<?php echo $rowsize['size_name']?>"><?php echo $rowsize['size_name']?></option>
 							<?php } ?>
 									</select>
 								</div>

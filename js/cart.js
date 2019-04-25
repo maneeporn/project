@@ -3,6 +3,7 @@ $(document).ready(function() {
 // Shopping Cart API
 // ************************************************
 var shoppingCart = (function() {
+
     // =============================
     // Private methods and propeties
     // =============================
@@ -12,21 +13,30 @@ var shoppingCart = (function() {
     function saveCart(action, product_id, size, count) {
       var qty = count;
       var product_size = size;
-      var user_id = 1;
-      $.ajax({ url: 'cart.php',
-        data: {
-          action: action,
-          product_id: product_id,
-          product_size: product_size,
-          qty: qty,
-          user_id: user_id
-        },
-        type: 'post',
-        success: function(output) {
-          console.log('output: ' + output);
-          displayCart();
-        }
-      });
+      var user_id = getUserId();
+      id = user_id;
+      if(id == '!login') {
+        alert('Please Login!')
+      } else {
+        $.ajax({ url: 'cart.php',
+          data: {
+            action: action,
+            product_id: product_id,
+            product_size: product_size,
+            qty: qty,
+            user_id: id
+          },
+          type: 'post',
+          success: function(output) {
+            console.log('output: ' + output);
+            displayCart();
+            if(action == "add") {
+              $('#cart_alert').modal('show');
+              setTimeout(function(){ $('#cart_alert').modal('hide'); }, 2000);
+            }
+          }
+        });
+      }
     }
   
     // =============================
@@ -40,8 +50,8 @@ var shoppingCart = (function() {
     }
     // Set count from item
     // TODO:
-    obj.setCountForItem = function(product_id, count) {
-      saveCart('setcount', product_id, '', size, count);
+    obj.setCountForItem = function(product_id, count,size) {
+      saveCart('setcount', product_id, size, count);
     };
   
     // Remove all items from cart
@@ -66,45 +76,52 @@ var shoppingCart = (function() {
   })();
   
   function displayCart() {
-    
-    var user_id = 1;
-    console.log('get_cart_data');
-    $.ajax({ url: 'cart.php',
-      data: {
-        action: 'get_cart_data',
-        user_id: user_id
-      },
-      type: 'post',
-      success: function(res) {
-        var output = "";
-        if(res == 'empty') {
-            output ="<div class='row'>\
-                        <div class='col-12'><h2>No products in cart.</h2></div>\
-                    </div>";
-                    $('#sum').val(0)
-        } else {
-           
-            data = JSON.parse(res);
-            $.each( data, function( i, val ){
-              var total = val.qty * val.product_price;
-              var sum = Number($('#sum').val()) ;
+    var user_id = getUserId();
+    id = user_id;
+    console.log(id);
+    if(id != '!login') {
+      var user_id = 1;
+      $.ajax({ url: 'cart.php',
+        data: {
+          action: 'get_cart_data',
+          user_id: id
+        },
+        type: 'post',
+        success: function(res) {
+          var output = "";
+          var setqty = 0;
+          if(res == 'empty') {
+              output ="<div class='row'>\
+                          <div class='col-12'><h2>No products in cart.</h2></div>\
+                      </div>";
+                      $('#sum').val(0)
+          } else {
+              $('#sum').val(0);
+              data = JSON.parse(res);
+              $.each( data, function( i, val ){
+                var total = val.qty * val.product_price;
+                var sum = Number($('#sum').val()) ;
+                setqty+=Number(val.qty);
                 $('#sum').val(sum += Number(total));
+                $('#cart_id').val(val.cart_id);
                 output +=
-                    "<div class='row'>\
-                        <div class='col-1'><img class='img-fluid' src='image/" + val.picture1 + "' ></div>\
-                        <div class='col-4'><p>" + val.product_name + " (" + val.product_size + ")</p></div>\
-                        <div class='col-2'><p>" + val.product_price + " THB</p></div>\
-                        <div class='col-1'><input type='number' class='item-count form-control' data-id='" + val.product_id + "'  data-size='" + val.product_size + "' value='" + val.qty + "'></div>\
-                        <div class='col-3'><p>Total = " + total + " THB</p></div>\
-                        <div class='col-1 ml-auto'><button class='delete-item btn' data-id='" + val.product_id + "' data-size='" + val.product_size + "' ><i class='fas fa-trash-alt'></i></button></div>\
-                    </div>";
-            });
+                "<div class='row'>\
+                  <div class='col-1'><img class='img-fluid' src='image/" + val.picture1 + "' ></div>\
+                  <div class='col-4'><p>" + val.product_name + " (" + val.product_size + ")</p></div>\
+                  <div class='col-2'><p>" + val.product_price + " THB</p></div>\
+                  <div class='col-1'><input type='number' class='item-count form-control' data-id='" + val.product_id + "'  data-size='" + val.product_size + "' value='" + val.qty + "'></div>\
+                  <div class='col-3'><p>Total = " + total + " THB</p></div>\
+                  <div class='col-1 ml-auto'><button class='delete-item btn' data-id='" + val.product_id + "' data-size='" + val.product_size + "' ><i class='fas fa-trash-alt'></i></button></div>\
+                </div>";
+                $('.product_count').html(setqty);
+              });
+          }
+          $('.show-cart').html(output);
+          $('.total-cart').html($('#sum').val());
+          
         }
-        $('.show-cart').html(output);
-        $('.total-cart').html($('#sum').val());
-        $('.product_count').html(1);
-      }
-    });
+      });
+    }
   }
   
   // *****************************************
@@ -126,15 +143,15 @@ var shoppingCart = (function() {
   $('.show-cart').on("click", ".delete-item", function(event) {
     var id = $(this).data('id');
     var size = $(this).data('size');
-    console.log(size);
     shoppingCart.removeItemFromCartAll(id, size);
-  })
+  });
   
   // Item count input
   $('.show-cart').on("change", ".item-count", function(event) {
     var id = $(this).data('id');
+    var size = $(this).data('size');
     var count = Number($(this).val());
-    shoppingCart.setCountForItem(id, count);
+    shoppingCart.setCountForItem(id, count,size);
   });
   
   displayCart();
@@ -144,7 +161,5 @@ var shoppingCart = (function() {
     $("#pimg").attr("src","image/" + picture1);
     $('#pname').text($('#product_name').val());
     $('#psize').text($('#size').val());
-    $('#cart_alert').modal('show');
-    setTimeout(function(){ $('#cart_alert').modal('hide'); }, 2000);
   })
 });

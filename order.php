@@ -1,5 +1,6 @@
 <?php   include "header.php"; 
         include "config.php";
+        $cart_id = $_POST['cart_id'];
         if(isset($_SESSION['user_id']))
         {
             $user_id=$_SESSION['user_id'];
@@ -19,7 +20,7 @@
         {?>
             <div class="content">
                 <div class="row">
-                    <div class="col-7">
+                    <div class="col-12">
                         <div class="card address">
                             <div class="card-title">
                                 <h3 class="addressh3">Address<h3>
@@ -31,15 +32,16 @@
                                 <form  method="post" action="payment.php">
                                 <div class="form-group address">
                                     <label>Firstname</label>
-                                    <input type="text" class="form-control" name="fname">
+                                    <input type="text" class="form-control" name="fname" >
                                     <label>Lastname</label>
                                     <input type="text" class="form-control" name="lname">
                                     <label>Address</label>
                                     <input type="text" class="form-control" name="address">
                                     <label>Phone</label>
-                                    <input type="text" class="form-control" name="phone">
+                                    <input type="text" class="form-control" name="phone" maxlength="10">
                                     <label>E-mail</label>
                                     <input type="text" class="form-control" name="email">
+                                    <input type="hidden" id="cart_id" name="cart_id" value="<?php $cart_id ?>">
                                 </div>
                                 <div class="input-group">
                                     <input class="button1" type="submit" name="button" id="button" value="Submit" />
@@ -58,9 +60,10 @@
                                     <label>Address</label>
                                     <input type="text" class="form-control" name="address" value="<?php echo $row['address'];?>">
                                     <label>Phone</label>
-                                    <input type="text" class="form-control" name="phone" value="<?php echo $row['phone'];?>">
+                                    <input type="text" class="form-control" name="phone" value="<?php echo $row['phone'];?>" maxlength="10">
                                     <label>E-mail</label>
                                     <input type="text" class="form-control" name="email" value="<?php echo $row['email'];?>">
+                                    <input type="hidden" id="cart_id" name="cart_id" value="<?php $cart_id ?>">
                                 </div>
                                 <div class="input-group">
                                     <input class="button1" type="submit" name="button" id="button" value="Submit" />
@@ -71,38 +74,6 @@
                     <?php   }?> 
                             </div>
                          </div>
-                    </div>
-                    <div class="col-5">
-                        <?php
-                            $query = "Select * from cart join cart_details using (cart_id) join product using (product_id) where cart.user_id =".$user_id;
-                            $cartdetails = mysqli_query($connect,$query);
-                            while ($row = mysqli_fetch_assoc($cartdetails));
-                            {?>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3>Sign In</h3>
-                                </div>
-                                <div class="card-body">\
-                                    <form action="check_login.php" method="post"> 
-                                        <div class="input-group form-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                <input type="text" class="form-control login" placeholder="username" name="username">	
-                                            </div>
-                                        </div>
-                                        <div class="input-group form-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                                <input type="password" class="form-control login" placeholder="password" name="password">
-                                            </div>
-                                        </div>
-                                        <div class="input-group">
-                                            <input class="button1" type="submit" name="button" id="button" value="sign in" />
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        <?php } ?>
                     </div>
                 </div>
             </div>

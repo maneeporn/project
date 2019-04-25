@@ -24,12 +24,10 @@
 		$_SESSION['user_id'] = $row['user_id'];
 		if($l=='1')
 		{
-			$_SESSION['user_id'] = $l;
 			header("Location:admin.php");
 		}
 		else
 		{
-			$_SESSION['user_id']=$l;
 			header("Location:index.php");
 		}	
 	}
