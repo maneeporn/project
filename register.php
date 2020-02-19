@@ -14,10 +14,10 @@
               <input class="input--style-3" type="text" placeholder="username" name="username">
             </div>
             <div class="input-group">
-              <input class="input--style-3" type="text" placeholder="password" name="password">
+              <input class="input--style-3" type="password" placeholder="password" name="password">
             </div>
             <div class="input-group">
-              <input class="input--style-3" type="text" placeholder="confrim password" name="confrimpassword">
+              <input class="input--style-3" type="password" placeholder="confrim password" name="confrimpassword">
             </div>
             <div class="input-group">
               <input class="input--style-3" type="text" placeholder="first name" name="fname">
